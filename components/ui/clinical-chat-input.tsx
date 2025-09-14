@@ -1,20 +1,11 @@
 "use client";
 
 import * as React from "react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog";
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import {
   PaperclipIcon,
-  SendIcon,
-  MicIcon,
-  XIcon,
   FileIcon,
   HeartIcon,
 } from "lucide-react";
@@ -210,7 +201,7 @@ export const ClinicalChatInput = React.forwardRef<HTMLTextAreaElement, Omit<Reac
               {uploadedFiles.map((file, index) => (
                 <div key={index} className="relative">
                   {file.type.startsWith("image/") ? (
-                    <Dialog open={isImageDialogOpen && selectedImageIndex === index} onOpenChange={setIsImageDialogOpen}>
+                    <DialogPrimitive.Root open={isImageDialogOpen && selectedImageIndex === index} onOpenChange={setIsImageDialogOpen}>
                       <button 
                         type="button" 
                         className="transition-transform" 
@@ -232,7 +223,7 @@ export const ClinicalChatInput = React.forwardRef<HTMLTextAreaElement, Omit<Reac
                           className="w-full max-h-[95vh] object-contain rounded-[24px]" 
                         />
                       </DialogContent>
-                    </Dialog>
+                    </DialogPrimitive.Root>
                   ) : (
                     <div className="h-14 w-14 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
                       <FileTextIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
@@ -265,24 +256,24 @@ export const ClinicalChatInput = React.forwardRef<HTMLTextAreaElement, Omit<Reac
           />
           
           <div className="mt-0.5 p-1 pt-0">
-            <TooltipProvider delayDuration={100}>
+            <TooltipPrimitive.Provider delayDuration={100}>
               <div className="flex items-center gap-2">
-                <Tooltip>
-                  <TooltipTrigger asChild>
+                <TooltipPrimitive.Root>
+                  <TooltipPrimitive.Trigger asChild>
                     <button type="button" onClick={handlePlusClick} className="flex h-8 w-8 items-center justify-center rounded-full text-foreground dark:text-white transition-colors hover:bg-accent dark:hover:bg-[#515151] focus-visible:outline-none">
                       <PlusIcon className="h-6 w-6" />
                       <span className="sr-only">Attach files</span>
                     </button>
-                  </TooltipTrigger>
+                  </TooltipPrimitive.Trigger>
                   <TooltipContent side="top" showArrow={true}>
                     <p>Attach medical files</p>
                   </TooltipContent>
-                </Tooltip>
+                </TooltipPrimitive.Root>
                 
 
                 <div className="ml-auto flex items-center gap-2">
-                  <Tooltip>
-                    <TooltipTrigger asChild>
+                  <TooltipPrimitive.Root>
+                    <TooltipPrimitive.Trigger asChild>
                       <button 
                         type="button" 
                         onClick={handleVoiceClick}
@@ -295,14 +286,14 @@ export const ClinicalChatInput = React.forwardRef<HTMLTextAreaElement, Omit<Reac
                         <MicIcon className={`h-5 w-5 ${isRecording ? 'animate-pulse' : ''}`} />
                         <span className="sr-only">{isRecording ? 'Stop recording' : 'Record voice'}</span>
                       </button>
-                    </TooltipTrigger>
+                    </TooltipPrimitive.Trigger>
                     <TooltipContent side="top" showArrow={true}>
                       <p>{isRecording ? 'Stop recording' : 'Record voice note'}</p>
                     </TooltipContent>
-                  </Tooltip>
+                  </TooltipPrimitive.Root>
 
-                  <Tooltip>
-                    <TooltipTrigger asChild>
+                  <TooltipPrimitive.Root>
+                    <TooltipPrimitive.Trigger asChild>
                       <button 
                         type="submit" 
                         disabled={!hasValue} 
@@ -311,14 +302,14 @@ export const ClinicalChatInput = React.forwardRef<HTMLTextAreaElement, Omit<Reac
                         <SendIcon className="h-6 w-6 text-bold" />
                         <span className="sr-only">Send message</span>
                       </button>
-                    </TooltipTrigger>
+                    </TooltipPrimitive.Trigger>
                     <TooltipContent side="top" showArrow={true}>
                       <p>Send clinical query</p>
                     </TooltipContent>
-                  </Tooltip>
+                  </TooltipPrimitive.Root>
                 </div>
               </div>
-            </TooltipProvider>
+            </TooltipPrimitive.Provider>
           </div>
         </div>
       </form>
