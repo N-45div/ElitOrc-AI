@@ -94,7 +94,7 @@ Medical Images → Roboflow Analysis → Clinical Context → LLM Analysis
 Structured Report ← Clinical Reasoning ← Combined Evidence ← Case History
 ```
 
-## 🎯 Hackathon Innovation
+## 🎯 Innovative Features
 
 - **Real-World Impact**: Actual clinical decision support system
 - **Multi-Step Agents**: Complex workflows beyond simple Q&A
