@@ -1,6 +1,6 @@
 const baseUrl = process.env.NODE_ENV === 'production' 
-  ? process.env.NEXT_PUBLIC_BACKEND_API_URL || 'https://your-deployed-backend.vercel.app' 
-  : 'http://localhost:3001'; 
+  ? '' // Use relative URLs in production (same domain)
+  : 'http://localhost:3000'; // Next.js dev server 
 
 export const clinicalAPI = {
   async executeWorkflow(query: string, files: File[] = []) {
