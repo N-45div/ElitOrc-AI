@@ -1,7 +1,5 @@
 import { groq } from '@ai-sdk/groq';
 import { Agent } from '@mastra/core/agent';
-import { Memory } from '@mastra/memory';
-import { LibSQLStore } from '@mastra/libsql';
 import { roboflowTool } from '../tools/roboflow-tool';
 import { tidbSearchTool } from '../tools/tidb-search-tool';
 import { caseIngestionTool } from '../tools/case-ingestion-tool';
@@ -57,9 +55,4 @@ Always reference similar cases from the database when available and emphasize th
     tidbSearchTool,
     caseIngestionTool
   },
-  memory: new Memory({
-    storage: new LibSQLStore({
-      url: 'file:../mastra.db', // path is relative to the .mastra/output directory
-    }),
-  }),
 });

@@ -17,7 +17,6 @@
     "@dsnp/parquetjs": "^1.8.7",
     "@mastra/client-js": "^0.12.2",
     "@mastra/core": "^0.16.3",
-    "@mastra/libsql": "^0.14.1",
     "@mastra/loggers": "^0.10.11",
     "@mastra/memory": "^0.15.1",
     "@radix-ui/react-dialog": "^1.1.15",
