@@ -40,7 +40,7 @@ function Hero() {
           {/* Main Heading */}
           <div className="flex gap-6 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-4xl tracking-tighter text-center font-bold">
-              <span className="text-gray-900 dark:text-white">Clinical AI that's</span>
+              <span className="text-gray-900 dark:text-white">Clinical AI that&apos;s</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
@@ -105,9 +105,9 @@ function Hero() {
 
           {/* Trust Indicators */}
           <div className="flex flex-col items-center gap-4 mt-8">
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Trusted by healthcare professionals worldwide
-            </p>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            AI-powered clinical decision support that chains vector search, medical imaging, and expert reasoning to provide instant diagnostic assistance for healthcare professionals.
+          </p>
           </div>
         </div>
       </div>

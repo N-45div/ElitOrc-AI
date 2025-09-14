@@ -1,9 +1,23 @@
 "use client";
 
 import * as React from "react";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import * as PopoverPrimitive from "@radix-ui/react-popover";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
+import {
+  PaperclipIcon,
+  SendIcon,
+  MicIcon,
+  XIcon,
+  FileIcon,
+  HeartIcon,
+} from "lucide-react";
 
 // --- Utility Function & Radix Primitives ---
 type ClassValue = string | number | boolean | null | undefined;
