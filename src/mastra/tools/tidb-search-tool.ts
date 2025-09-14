@@ -1,10 +1,10 @@
-import { createTool } from '@mastra/core';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { tidb } from '../config/tidb';
 import { embeddingService } from '../services/embeddingService';
 
 export const tidbSearchTool = createTool({
-  id: 'tidb-search',
+  id: 'tidbSearchTool',
   description: 'Search for similar clinical cases using TiDB Serverless vector search',
   inputSchema: z.object({
     query: z.string().describe('Clinical query or symptoms to search for'),

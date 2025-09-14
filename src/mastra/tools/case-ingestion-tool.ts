@@ -1,10 +1,10 @@
-import { Tool } from '@mastra/core';
+import { createTool } from '@mastra/core/tools';
 import { z } from 'zod';
 import { tidb } from '../config/tidb';
 import { embeddingService } from '../services/embeddingService';
 
-export const caseIngestionTool = new Tool({
-  id: 'case-ingestion',
+export const caseIngestionTool = createTool({
+  id: 'caseIngestionTool',
   description: 'Ingest and index new clinical cases into TiDB Serverless with vector embeddings',
   inputSchema: z.object({
     title: z.string().describe('Case title'),
