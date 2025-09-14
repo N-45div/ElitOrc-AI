@@ -5,11 +5,28 @@
 ElitorcAI is an advanced multimodal clinical AI assistant that demonstrates real-world agentic workflows using TiDB Serverless for vector search and clinical case analysis. Built for the TiDB AgentX Hackathon, this system showcases multi-step AI agents that go beyond simple RAG to deliver comprehensive clinical decision support.
 
 **Multi-Step Agentic Workflow:**
-1. **Data Ingestion & Indexing** - Clinical cases with vector embeddings stored in TiDB Serverless
-2. **Vector Search** - Similar case retrieval using TiDB's vector similarity search
-3. **LLM Chain Analysis** - Groq-powered clinical reasoning with context from similar cases
-4. **External Tool Integration** - Roboflow API for medical image analysis
-5. **Automated Multi-Step Flow** - From patient query to comprehensive clinical assessment
+
+```mermaid
+flowchart TD
+    A[📋 Patient Input<br/>Medical Images + Symptoms] --> B[🔍 Step 1: Medical Image Analysis<br/>Roboflow AI Detection]
+    B --> C[🧠 Step 2: Embedding Generation<br/>Cohere Text Embeddings]
+    C --> D[🔎 Step 3: Vector Search<br/>TiDB Similarity Search]
+    D --> E[⚕️ Step 4: Clinical Reasoning<br/>Groq LLM Synthesis]
+    
+    F[(🗄️ TiDB Serverless<br/>Vector Database)] -.-> D
+    G[📊 MultiCaRe Dataset<br/>200+ Clinical Cases] -.-> F
+    
+    E --> H[📄 Structured Clinical Report<br/>• Primary Diagnosis<br/>• Similar Cases<br/>• Treatment Plan]
+    
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#e6e6e6,stroke:#333,stroke-width:2px,color:#000
+    style G fill:#e6e6e6,stroke:#333,stroke-width:2px,color:#000
+    style H fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+```
 
 ### 🧠 Dr. AMIE - Clinical AI Agent
 
