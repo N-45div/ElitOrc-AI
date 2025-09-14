@@ -102,13 +102,6 @@ function Hero() {
               <PhoneCall className="w-5 h-5" />
             </Button>
           </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-col items-center gap-4 mt-8">
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            AI-powered clinical decision support that chains vector search, medical imaging, and expert reasoning to provide instant diagnostic assistance for healthcare professionals.
-          </p>
-          </div>
         </div>
       </div>
     </div>
